@@ -1,7 +1,4 @@
-AI 健康守護 V1.2 更新說明
-
-1. 在 GitHub ai-health-guard-demo 儲存庫 Code 頁面，依序使用 Add file → Upload files 上傳 index.html、app.js、manifest.webmanifest、sw.js，覆蓋同名檔案。
-2. 按 Commit changes。
-3. 等待 GitHub Pages 重新部署後，使用 Chrome 無痕分頁開啟 https://fbthc5168.github.io/ai-health-guard-demo/ 測試。
-4. 受訪者基本資料頁僅為展示欄位，不會建立帳號或儲存資料，請勿輸入真實身分證、姓名、生日、電話或信箱。
-5. 上線正式個資建檔前必須另建安全後端及資料保護制度。
+V1.3 修正：移除重複 step===1 導致基本資料被覆蓋的程式碼，更新 app.js 版本與 Service Worker 快取。
+請在 GitHub 更新 index.html、app.js、sw.js，並確認 main 根目錄。
+上傳後使用 Chrome 無痕分頁檢查首頁及基本資料頁。
+測試版禁止輸入真實身分證、姓名、電話、生日或醫療資料。

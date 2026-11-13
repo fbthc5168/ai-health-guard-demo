@@ -17,7 +17,6 @@ if(step===1)h=`<h2>受訪者基本資料（測試版）</h2><p class="note">請�
 <div class="note"><strong>個人資料保密與使用說明</strong><p>本測試版僅用於展示健康評估操作流程，不會將填答內容上傳至 GitHub 或其他伺服器，也不會建立個人病歷。請勿輸入真實可識別個人資料。正式版啟用個人資料建檔前，須另行提供資料蒐集者、目的、類別、使用期間、地區、對象、方式、當事人權利與聯絡管道，並完成適當的安全及法規審查。</p></div>
 <label><input type="checkbox" id="profile_agree">我已閱讀說明，並了解此頁只能使用虛構測試資料</label>
 <button id="back">上一步</button><button id="profile_next" disabled>繼續急症警訊檢查</button>`;
-if(step===1)h='<h2>開始全身健康檢查</h2><p>先排除緊急警訊，再了解全身症狀、慢性病史、血壓與血糖。</p><p class="note">資料不會上傳或儲存。這是設計測試原型，不提供醫療診斷。</p><button id="next">開始</button>';
 if(step===2)h='<h2>1. 緊急警訊</h2><p>如果現在或剛剛出現以下任何症狀，請勾選：</p>'+checks('red',emergency)+(data.red.length?'<div class="alert"><h3>請停止問卷，立即撥打119</h3><p>可能有急症，請立即尋求救護。即使疑似中風症狀消失，也應立即接受急診評估。不要等待線上醫師或自行開車。</p><a href="tel:119">撥打119</a></div>':'')+'<button id="back">上一步</button><button id="next" '+(data.red.length?'disabled':'')+'>沒有上述警訊，繼續</button>';
 if(step===3)h='<h2>2. 全身症狀</h2><p>最近幾週有以下哪些情況？可複選，沒有可直接繼續。</p>'+checks('sym',symptoms)+'<button id="back">上一步</button><button id="next">下一步</button>';
 if(step===4)h='<h2>3. 症狀發生時間與程度</h2><p>何時開始？</p>'+radios('onset',[['none','沒有症狀'],['sudden','突然發生或快速惡化'],['days','幾天內'],['weeks','幾週以上'],['unknown','不確定']])+'<p>對日常生活的影響？</p>'+radios('severity',[['none','沒有症狀'],['mild','輕微'],['moderate','影響生活'],['severe','嚴重，無法正常活動']])+'<button id="back">上一步</button><button id="next" '+(!data.onset||!data.severity?'disabled':'')+'>下一步</button>';
